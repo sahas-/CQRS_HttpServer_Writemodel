@@ -1,3 +1,7 @@
+### Setup
+This repo uses akka-persistence and redis as a journal/snapshot persistence provider
+
+Make sure to update your redis config in src/main/resources/applicaiton.conf
 ### compile
 `sbt compile`
 ### run
