@@ -1,0 +1,19 @@
+---
+execution:
+  - concurrency: 100
+    ramp-up: 30s
+    hold-for: 60s
+    scenario: simple
+
+scenarios:
+  think-time: 30s
+  simple:
+    requests:
+      - url: http://localhost:8080/user-joined/${__javaScript(Math.floor(Math.random() * Math.floor(99)))}
+        method: POST
+        headers:
+          Content-Type: application/json
+      - url: http://localhost:8080/user-left/${__javaScript(Math.floor(Math.random() * Math.floor(99)))}
+        method: POST
+        headers:
+          Content-Type: application/json
